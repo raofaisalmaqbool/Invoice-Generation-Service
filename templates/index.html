@@ -2,27 +2,27 @@
 
 {% block content %}
 <div class="container mt-4">
-    <div class="card-group">
-      <div class="row row-cols-1 row-cols-md-3 g-4">
-        {% for p in products %}
-        <div class="col"  style="margin-left: 60px;">
-          <div class="card" style="width: 18rem;">
-            <!-- <img src="{{ p.img.url }}" class="card-img-top" alt="..."> -->
-            <div class="card-body">
-              <h5 class="card-title">{{p.name}}</h5>
-              <p class="card-text"> {{p.dis}}</p>
-              <p><h2>Price: </h2>{{p.price}}</h2></p>
-              <form method="get" action=" {% url 'buy' p.id %}">
-
-              <button type="submit" class="btn btn-primary mb-3">Buy Product</button>
+  <h2 class="mb-4">Available Products</h2>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for p in products %}
+      <div class="col d-flex">
+        <div class="card flex-fill">
+          <!-- <img src="{{ p.img.url }}" class="card-img-top" alt="Product image"> -->
+          <div class="card-body">
+            <h5 class="card-title">{{ p.name }}</h5>
+            <p class="card-text">{{ p.dis }}</p>
+            <p class="card-text fw-semibold">Price: {{ p.price }}</p>
+            <form method="get" action="{% url 'buy' p.id %}">
+              <button type="submit" class="btn btn-primary mb-1">Buy Product</button>
             </form>
-            </div>
           </div>
         </div>
-        {% endfor %}
       </div>
-    </div>
+    {% empty %}
+      <p>No products are available yet.</p>
+    {% endfor %}
   </div>
+</div>
 
 {% endblock %}
 

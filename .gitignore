@@ -1,0 +1,23 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Django database
+db.sqlite3
+*.sqlite3
+
+# Django collected static files
+staticfiles/
+
+# Media uploads
+media/
+
+# Virtual environments
+venv/
+.env*/
+
+# IDE/editor settings
+.vscode/
+.idea/
+*.log

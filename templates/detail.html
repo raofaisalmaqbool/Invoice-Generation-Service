@@ -4,7 +4,9 @@
 
   <div id="pt">
       <div class="container mt-5">
-          <div><h1>Invoice Details {{msg}}:</h1> </div>
+          <div>
+              <h1>Invoice Details{% if msg %} - {{ msg }}{% endif %}</h1>
+          </div>
           <div>
               <table class="table">
                   <tr>
@@ -122,8 +124,5 @@
 </div>
 
 </div>
-
-
-</script>
 
 {% endblock %}
